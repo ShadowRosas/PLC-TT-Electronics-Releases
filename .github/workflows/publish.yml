@@ -67,7 +67,7 @@ jobs:
               if re.fullmatch(r'\d+\.\d+\.\d+', other) and version(other) >= version(tag):
                   raise RuntimeError('Version already published or superseded; no overwrite')
           release = request(base + '/releases', {'tag_name': tag, 'target_commitish': 'main',
-              'name': 'IgoAndSee PLC ' + tag, 'draft': True, 'prerelease': False,
+              'name': 'IgoAndTrack Desktop ' + tag, 'draft': True, 'prerelease': False,
               'body': 'Windows x64. Actualizaciones verificadas con Ed25519. MSI sin certificado Authenticode.'})
           upload = release['upload_url'].split('{')[0]
           if upload != f'https://uploads.github.com/repos/{repository}/releases/{release["id"]}/assets':
